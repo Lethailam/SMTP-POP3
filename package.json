@@ -9,8 +9,11 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "imap": "^0.8.17",
+    "mailparser": "^3.7.5",
     "next": "15.5.5",
     "nodemailer": "^7.0.9",
+    "pg": "^8.16.3",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },

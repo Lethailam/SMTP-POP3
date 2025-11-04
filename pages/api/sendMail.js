@@ -24,7 +24,20 @@ export default async function handler(req, res) {
       text: message,
     });
 
-    return res.status(200).json({ message: "Email đã được gửi thành công!" });
+    // Lưu email vào kho lưu trữ
+    const saveResponse = await fetch(`${req.headers.origin || 'http://localhost:3000'}/api/saveEmail`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        sender_email,
+        receiver_email,
+        subject,
+        message,
+        date: new Date().toISOString()
+      })
+    });
+
+    return res.status(200).json({ message: "Email đã được gửi và lưu thành công!" });
   } catch (error) {
     console.error("Email send error:", error);
     return res.status(500).json({ error: "Gửi email thất bại" });

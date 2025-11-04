@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -39,12 +40,23 @@ export default function Home() {
           </li>
         </ol>
 
-        {/* ✅ Nút gửi mail thêm vào đây */}
-        <Link href="/send-mail">
-          <button className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
-            Gửi mail ngay
-          </button>
-        </Link>
+        <div className="flex gap-4">
+          <Link href="/send-mail">
+            <button className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
+              Gửi mail ngay
+            </button>
+          </Link>
+          <Link href="/receive-mail">
+            <button className="px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition">
+              Nhận mail
+            </button>
+          </Link>
+          <Link href="/storage">
+            <button className="px-6 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition">
+              Kho lưu trữ
+            </button>
+          </Link>
+        </div>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
@@ -65,7 +77,51 @@ export default function Home() {
         </div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        {/* footer giữ nguyên */}
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://nextjs.org/learn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/file.svg"
+            alt="File icon"
+            width={16}
+            height={16}
+          />
+          Learn
+        </a>
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://vercel.com/templates"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/window.svg"
+            alt="Window icon"
+            width={16}
+            height={16}
+          />
+          Examples
+        </a>
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://nextjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/globe.svg"
+            alt="Globe icon"
+            width={16}
+            height={16}
+          />
+          Go to nextjs.org →
+        </a>
       </footer>
     </div>
   );
